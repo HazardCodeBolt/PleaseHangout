@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تطلع معي؟</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+
+      body {
+        font-family: Lalezar, Arial, Helvetica, sans-serif !important;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 5rem;
+        color: rgb(255, 56, 76);
+      }
+
+      #cat-img {
+        border-radius: 20px;
+        display: block;
+        margin: auto;
+        filter: grayscale();
+      }
+
+      #cat-gif-cnt {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      #please-text {
+        position: absolute;
+        top: 60%;
+        left: 45%;
+        color: white;
+        font-size: 2rem;
+      }
+
+      #buttons-div > button {
+        display: block;
+      }
+
+      button#yes {
+        background-color: rgb(0, 255, 115);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: Lalezar;
+        font-size: 20px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      button#yes {
+        background-color: rgb(0, 255, 115);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: Lalezar;
+        font-size: 20px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      button#yes:hover {
+        background-color: rgb(0, 200, 90);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: Lalezar;
+        font-size: 20px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      button#no {
+        background-color: rgb(255, 0, 68);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: Lalezar;
+        font-size: 20px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: white;
+        position: relative;
+        left: 0;
+      }
+
+      .swal2-confirm {
+        color: black !important;
+        font-family: Lalezar !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> !تطلع معي؟ بليييييز</h1>
+    <div id="cat-gif-cnt">
+      <img
+        id="cat-img"
+        src="https://media.giphy.com/media/sXv0vaA4331Ti/giphy.gif"
+        alt=""
+      />
+      <h3 id="please-text">بليييييز</h3>
+    </div>
+
+    <div id="buttons-div">
+      <button type="button" id="yes">خلا شابة</button>
+      <button type="button" id="no">غيب عني</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.ready(()=> {
+            const createRandomNumber = (n) => Math.floor(Math.random() * n) + 1;
+            const createPosOrNeg = () => (Math.random() < 0.5 ? -1 : 1);
+      
+            const yesButton = document.getElementById("yes");
+            const noButton = document.getElementById("no");
+      
+            const stopPosChange = () => {
+              noButton.style.position = "static";
+            };
+      
+            $("#no").onclick(()=>{
+                noButton.style.left = `${createRandomNumber(40) * createPosOrNeg()}%`;  
+            })
+            $("#no").mouseover(() => {
+              noButton.style.left = `${createRandomNumber(40) * createPosOrNeg()}%`;
+            });
+      
+            yesButton.onclick = () => {
+              Swal.fire({
+                imageUrl:
+                  "https://media.giphy.com/media/LTcau7EnQLhHkxxG2u/giphy.gif",
+                imageAlt: "A tall image",
+                confirmButtonColor: "#00ff73",
+                confirmButtonText: "تسلم الغالي",
+              });
+            };
+        });
+    </script>
+  </body>
+</html>
