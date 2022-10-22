@@ -129,9 +129,10 @@
         noButton.style.position = "static";
       };
 
-      $("#no").onclick(() => {
+      noButton.onclick = () => {
         noButton.style.left = `${createRandomNumber(40) * createPosOrNeg()}%`;
-      });
+      };
+      
       $("#no").mouseover(() => {
         noButton.style.left = `${createRandomNumber(40) * createPosOrNeg()}%`;
       });
