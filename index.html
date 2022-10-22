@@ -102,7 +102,7 @@
     </style>
   </head>
   <body>
-    <h1> !تطلع معي؟ بليييييز</h1>
+    <h1>!تطلع معي؟ بليييييز</h1>
     <div id="cat-gif-cnt">
       <img
         id="cat-img"
@@ -119,34 +119,32 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        document.ready(()=> {
-            const createRandomNumber = (n) => Math.floor(Math.random() * n) + 1;
-            const createPosOrNeg = () => (Math.random() < 0.5 ? -1 : 1);
-      
-            const yesButton = document.getElementById("yes");
-            const noButton = document.getElementById("no");
-      
-            const stopPosChange = () => {
-              noButton.style.position = "static";
-            };
-      
-            $("#no").onclick(()=>{
-                noButton.style.left = `${createRandomNumber(40) * createPosOrNeg()}%`;  
-            })
-            $("#no").mouseover(() => {
-              noButton.style.left = `${createRandomNumber(40) * createPosOrNeg()}%`;
-            });
-      
-            yesButton.onclick = () => {
-              Swal.fire({
-                imageUrl:
-                  "https://media.giphy.com/media/LTcau7EnQLhHkxxG2u/giphy.gif",
-                imageAlt: "A tall image",
-                confirmButtonColor: "#00ff73",
-                confirmButtonText: "تسلم الغالي",
-              });
-            };
+      const createRandomNumber = (n) => Math.floor(Math.random() * n) + 1;
+      const createPosOrNeg = () => (Math.random() < 0.5 ? -1 : 1);
+
+      const yesButton = document.getElementById("yes");
+      const noButton = document.getElementById("no");
+
+      const stopPosChange = () => {
+        noButton.style.position = "static";
+      };
+
+      $("#no").onclick(() => {
+        noButton.style.left = `${createRandomNumber(40) * createPosOrNeg()}%`;
+      });
+      $("#no").mouseover(() => {
+        noButton.style.left = `${createRandomNumber(40) * createPosOrNeg()}%`;
+      });
+
+      yesButton.onclick = () => {
+        Swal.fire({
+          imageUrl:
+            "https://media.giphy.com/media/LTcau7EnQLhHkxxG2u/giphy.gif",
+          imageAlt: "A tall image",
+          confirmButtonColor: "#00ff73",
+          confirmButtonText: "تسلم الغالي",
         });
+      };
     </script>
   </body>
 </html>
